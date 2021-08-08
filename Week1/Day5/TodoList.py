@@ -36,5 +36,9 @@ while answer != 'q':
     for todo in todoList:
            print("%d: %s" % (count,todoList))
 
+
+    else: 
+        print("Enter a valid option")
+
     
     

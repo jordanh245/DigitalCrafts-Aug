@@ -1,0 +1,1 @@
+This python project consists of a simple text based game where I used functions, classes, and loops.

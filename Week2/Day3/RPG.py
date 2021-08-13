@@ -5,7 +5,7 @@ firstName = input("Hello player! Before we get started what is your name?\n\n")
     
 print("Howdy,", firstName)
 
-time.sleep(3)
+time.sleep(2)
 
 
 firstMessage = print("""
@@ -42,7 +42,7 @@ class Characters:
     def healthMeat(self):
         while self.health <= 30:
             self.health += 10
-            print("You ate a piece of meat and healed for 10 hp.")
+            print("You ate a piece of meat and healed for 10 health.")
             return
         else:
             print("Lets not waste your healing yet")
@@ -165,7 +165,7 @@ _____|_________|     ||               | |               ||
             print("""
             
 You run up to Dutch and attempt to take him by suprise with a swift punch but he was aware of your plan.\n\n
-Dutch ducked out of the way causing you to stumble on to the ground losing 20 hp.\n\n
+Dutch ducked out of the way causing you to stumble on to the ground losing 20 health.\n\n
             
             """)
             
@@ -174,7 +174,7 @@ Dutch ducked out of the way causing you to stumble on to the ground losing 20 hp
             villian.damageTaken(25)
             print("""
             
-You pull your lasso from your back and the moment Dutch loses focus on you, you catch him by his feet causing him to trip and lose 15 hp.\n\n
+You pull your lasso from your back and the moment Dutch loses focus on you, you catch him by his feet causing him to trip and lose 25 health.\n\n
             """)
         
             optionsMenu()

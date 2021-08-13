@@ -29,7 +29,7 @@ class Characters:
     def healthMeat(self):
         while self.health <= 30:
             self.health += 10
-            print("You pulled a piece of jerky from your back pocket and healed for 10 health.")
+            print("You pulled a piece of jerky from your back pocket and ate it which caused you to heal for 10 health.")
             return
         else:
             print("Lets not waste your healing yet")

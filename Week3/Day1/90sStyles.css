@@ -1,0 +1,33 @@
+h1 {
+	text-align: center;
+	color: rgb(5, 6, 0);
+	font-size: 70px;
+}
+
+li {list-style: none;}
+
+.pages a {
+	background-color: rgb(6, 240, 244);
+	color: rgb(236, 249, 0);
+	display: block;
+	padding: 5px;
+	
+  	border-radius: 20px;
+	
+	margin-block-end: 15px;
+	
+}
+li {
+	font-size: 20px;
+}
+
+p {font-size: xx-large;
+
+}
+
+
+.pictures {
+	display: inline;
+	margin: 480px;
+	padding: 0px;
+}

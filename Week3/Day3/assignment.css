@@ -9,7 +9,7 @@
 	
 }
 /* tablet size */
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 780px) {
 	.images {
 		display: grid;
 		grid-template-columns: 1fr;

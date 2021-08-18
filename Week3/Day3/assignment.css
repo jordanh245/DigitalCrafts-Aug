@@ -1,0 +1,20 @@
+.images {
+	display: grid;
+	grid-template-columns: repeat(3, 200px) ;
+	grid-template-rows: repeat(3, 200px);
+	justify-content: center;
+	align-content: center;
+	grid-column-gap: 10px;
+	
+	
+}
+/* tablet size */
+@media only screen and (max-width: 500px) {
+	.images {
+		display: grid;
+		grid-template-columns: 1fr;
+		
+		
+	}
+}
+

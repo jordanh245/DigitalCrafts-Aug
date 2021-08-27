@@ -1,0 +1,35 @@
+body {
+	margin: 0;
+	background-color: #2E8BC0;
+	
+}
+
+
+
+h1 {
+	color: black;
+	text-align: center;
+	
+	font-size: 40px;
+}
+
+.mainContainer {
+	display:grid;
+	justify-content: center;
+	align-items: center;
+	margin-top: 280px;
+	border: 5px outset lightgray;
+	margin-left: 100px;
+	margin-right: 100px;
+	padding: 75px;
+	background-color: #EEEDE7;
+}
+
+.weatherInfo{
+	margin-top: 15px;
+}
+
+.infoBox {
+	display: grid;
+	justify-content: center;
+}

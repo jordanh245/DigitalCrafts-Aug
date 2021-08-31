@@ -1,0 +1,69 @@
+body {
+	margin: 0;
+	background-color:white;
+}
+li {
+	list-style: none;
+	
+}
+.mainNav {
+	background-color: black;
+	list-style: none;
+	padding: 10px;
+	
+}
+
+
+nav {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	
+	
+}
+
+.mainContainer {
+	display: grid;
+	justify-content: center;
+	justify-content: space-evenly;
+	padding-bottom: 50px;
+	padding-top: 50px;
+	border-bottom: 3px solid black;
+	margin-left: 600px;
+	margin-right: 600px;
+	
+		
+}
+
+.dayImages {
+	margin-top: 100px;
+}
+
+
+.dayPic {
+	max-width: 500px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+
+	
+}
+.dayTitle {
+	text-align: center;
+	font-size: 75px;
+}
+.dayDate {
+	text-align: center;
+}
+.dayExp {
+	text-align: center;
+	margin-left: 300px;
+	margin-right: 300px;
+
+}
+
+
+.mainNav a{
+	text-decoration: none;
+	color: white;
+}

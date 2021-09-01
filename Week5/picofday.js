@@ -36,6 +36,7 @@ async function dayInfo(){
 const button = document.querySelector('.viewButton');
 button.addEventListener('click', () => {
     dayInfo()
+	input.value = ''
 }
 
 

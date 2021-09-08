@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	
+	<h1><div>${characters.map(character =>` <p>${character.name}</p> `).join('')}</h1></div>
+
+	<div> <h3>${characters.map(character =>` <p>${character.address}</p> `).join('')}</h3></div>
+
+	<div> <p>${characters.map(character =>` <p>${character.state}</p> `).join('')}</p></div>
+</body>
+</html>

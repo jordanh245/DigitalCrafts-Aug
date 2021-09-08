@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const PORT = 3003;
+const PORT = 3004;
 
 
 const characters = [
@@ -27,7 +27,6 @@ app.get('/', (req, res) => {
 	})
 })
 
-
-
+app.use(express.static('public'));
 
 app.listen(PORT, console.log(`Listening on port ${PORT}`))

@@ -8,6 +8,19 @@ const PORT = 3015;
 app.use(express.json())
 
 
+const es6Renderer = require('express-es6-template-engine');
+
+
+app.engine("html", es6Renderer);
+app.set("views", "templates");
+app.set("view engine", "html");
+
+
+app.get('/', (req, res) => {
+	res.render('index');
+})
+
+
 
 
 // CREATE

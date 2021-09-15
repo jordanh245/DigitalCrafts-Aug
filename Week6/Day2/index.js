@@ -2,9 +2,7 @@ const express = require("express")
 const app = express()
 const PORT = 3002
 const student = {name: 'jordan'}
-const students = [{name: 'jordan'},
-, {name: 'jenny'}, 
-{name: 'cameron'}]
+
 
 const escRenderer = require("express-es6-template-engine");
 app.engine('html', escRenderer);

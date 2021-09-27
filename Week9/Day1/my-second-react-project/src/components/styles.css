@@ -1,0 +1,28 @@
+body {
+	background-color: black;
+	
+}
+img {
+	width: 300px;
+}
+.section {
+	display: grid;
+	justify-content: center;
+	padding: 10px;
+	
+}
+
+
+.card {
+		
+		background-color: #E3E8E9;
+		width: 80%;
+		text-align: center;
+		
+	  }
+	  
+	  
+	  
+	  
+	
+	  

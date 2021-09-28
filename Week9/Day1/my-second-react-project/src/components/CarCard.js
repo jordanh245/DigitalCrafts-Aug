@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import CurrencyFormat from 'react-currency-format';
 import './styles.css';
 
 export default class CarCard extends Component {
@@ -32,7 +33,9 @@ this.setState({
 	changePic : !this.state.changePic
 });
 }
+changeNumber = () => {
 
+}
 	render() {
 
 		
@@ -44,7 +47,7 @@ this.setState({
 					<h2>{this.state.model}</h2>
 					<p>Engine: {this.state.engine}</p>
 					<p>Horsepower: {this.state.horsepower}</p>
-					<p> Price: {this.state.price}</p>
+					<p> Price: <CurrencyFormat value={this.state.price} displayType={'text'} thousandSeparator={true} prefix={'$'} /></p>
 					<img src = {this.state.carImage}/>
 					<button onClick={this.changeImage}>Change picture</button>
 					<p>Transmission: {this.state.transmission}</p>

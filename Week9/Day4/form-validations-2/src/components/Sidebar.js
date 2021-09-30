@@ -1,9 +1,14 @@
 import React from 'react'
-
+import { SidebarNav, SidebarHeader } from '../styled-components/SidebarStyle'
 export default function Sidebar() {
 	return (
-		<div>
-			<h1>Sidebar</h1>
-		</div>
+		<SidebarNav>
+			<SidebarHeader>Sidebar</SidebarHeader>
+			<SidebarHeader>Sidebar</SidebarHeader>
+			<SidebarHeader>Sidebar</SidebarHeader>
+			<SidebarHeader>Sidebar</SidebarHeader>
+			
+			
+		</SidebarNav>
 	)
 }

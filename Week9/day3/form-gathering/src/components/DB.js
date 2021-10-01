@@ -1,14 +1,19 @@
 import React from 'react'
-
+import {InfoArea, InfoHeader, AllInfo} from "../styled-components/DBstyle"
 function DB(props) {
-	const {signupInfo} = props;
-	console.log(signupInfo)
+	const {firstName, lastName, DOB, address, city, state, zipcode, username, email} = props.data;
+	
 	return (
 		
-		<div>
-		<h1>DB</h1>
-		<p>{signupInfo}</p>
-		</div>
+		<InfoArea>
+			<InfoHeader>Information</InfoHeader>
+		<AllInfo>{firstName} {lastName}</AllInfo>
+		<AllInfo>DOB: {DOB} </AllInfo>
+		<AllInfo>Address: {address} {city} {state} {zipcode}</AllInfo>
+		<AllInfo>Username: {username}</AllInfo>
+		<AllInfo>Email: {email}</AllInfo>
+		
+		</InfoArea>
 	)
 }
  export default DB;

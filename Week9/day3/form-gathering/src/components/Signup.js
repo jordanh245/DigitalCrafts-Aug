@@ -1,30 +1,29 @@
 import React from "react";
-
+import {SignupContainer, SignupArea, SignupInput, SignupButton} from "../styled-components/SignupStyle"
 
 function Signup(props) {
-	const {signupInfo, setSignupInfo} = props
+	const {signupInfo, setSignupInfo, signupList, setSignupList} = props;
 	// console.log(signupInfo)
 	
 	return (
 		
 		
-		<div>
+		< SignupArea>
 			
-		<h1>Sign up</h1>
 		
-		<input onChange={(e)=>setSignupInfo({...signupInfo, [e.target.name]:e.target.value})
-	} type="text" placeholder = "First Name" name="firstName"/>
-		<input onChange={(e)=>setSignupInfo({...signupInfo, [e.target.name]:e.target.value})}type="text" placeholder = "Last Name"name="lastName"/>
-		<input onChange={(e)=>setSignupInfo({...signupInfo, [e.target.name]:e.target.value})}type="text" name=""/>
-		<input onChange={(e)=>setSignupInfo({...signupInfo, [e.target.name]:e.target.value})}type="text" placeholder = "Address" name="address"/>
-		<input onChange={(e)=>setSignupInfo({...signupInfo, [e.target.name]:e.target.value})}type="text" placeholder = "City" name="city"/>
-		<input onChange={(e)=>setSignupInfo({...signupInfo, [e.target.name]:e.target.value})}type="text" placeholder = "State" name="state"/>
-		<input onChange={(e)=>setSignupInfo({...signupInfo, [e.target.name]:e.target.value})}type="text" placeholder = "Zipcode" name="zipcode"/>
-		<input onChange={(e)=>setSignupInfo({...signupInfo, [e.target.name]:e.target.value})}type="text" placeholder = "Username" name="username"/>
-		<input onChange={(e)=>setSignupInfo({...signupInfo, [e.target.name]:e.target.value})}type="text" placeholder = "Email" name="email"/>
-		<input  onClick={()=>setSignupInfo({...signupInfo})} type="button" value="Submit"/>
 		
-		</div>
+		<SignupInput onChange={(e)=>setSignupInfo({...signupInfo, [e.target.name]:e.target.value})} type="text" placeholder = "First Name" name="firstName"/>
+		<SignupInput onChange={(e)=>setSignupInfo({...signupInfo, [e.target.name]:e.target.value})}type="text" placeholder = "Last Name"name="lastName"/>
+		<SignupInput onChange={(e)=>setSignupInfo({...signupInfo, [e.target.name]:e.target.value})}type="date" placeholder = "DOB"  name="DOB"/> 
+		<SignupInput onChange={(e)=>setSignupInfo({...signupInfo, [e.target.name]:e.target.value})}type="text" placeholder = "Address" name="address"/>
+		<SignupInput onChange={(e)=>setSignupInfo({...signupInfo, [e.target.name]:e.target.value})}type="text" placeholder = "City" name="city"/>
+		<SignupInput onChange={(e)=>setSignupInfo({...signupInfo, [e.target.name]:e.target.value})}type="text" placeholder = "State" name="state"/>
+		<SignupInput onChange={(e)=>setSignupInfo({...signupInfo, [e.target.name]:e.target.value})}type="text" placeholder = "Zipcode" name="zipcode"/>
+		<SignupInput onChange={(e)=>setSignupInfo({...signupInfo, [e.target.name]:e.target.value})}type="text" placeholder = "Username" name="username"/>
+		<SignupInput onChange={(e)=>setSignupInfo({...signupInfo, [e.target.name]:e.target.value})}type="text" placeholder = "Email" name="email"/>
+		<SignupButton onClick={()=>setSignupList([...signupList, signupInfo])}>SUBMIT</SignupButton>
+		
+		</SignupArea>
 		
 	)
 }

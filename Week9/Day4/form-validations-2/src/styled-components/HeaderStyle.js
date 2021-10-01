@@ -14,6 +14,7 @@ height: 30px;
 width: 100px;
 margin: 25px;
 margin-top: 80px;
+background-color: #202833;
 `
 
 export const UserImg = styled.img`

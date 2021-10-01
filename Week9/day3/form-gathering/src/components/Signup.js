@@ -1,5 +1,5 @@
 import React from "react";
-import {SignupContainer, SignupArea, SignupInput, SignupButton} from "../styled-components/SignupStyle"
+import { SignupArea, SignupInput, SignupButton} from "../styled-components/SignupStyle"
 
 function Signup(props) {
 	const {signupInfo, setSignupInfo, signupList, setSignupList} = props;

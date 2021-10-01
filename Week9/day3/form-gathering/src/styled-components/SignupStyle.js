@@ -9,6 +9,7 @@ grid-template-columns: 1fr 1fr;
 font-family: 'Inter', sans-serif;;
 font-weight: normal;
 height: 100vh;
+
 background-color: whitesmoke;
 justify-content: center;
 
@@ -19,6 +20,8 @@ export const SignupArea = styled.div`
 display: grid;
 justify-content: center;
 align-items: center;
+
+
 
 
 

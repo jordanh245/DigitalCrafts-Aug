@@ -10,8 +10,8 @@ function App() {
   
   const [signupInfo, setSignupInfo] = useState({});
   const [signupList, setSignupList] = useState([]);
-  const data = signupList
-  console.log(data)
+  const info = signupList
+  console.log(info)
 
   return (
     <CompleteContainer>
@@ -25,8 +25,8 @@ function App() {
      
      <div>
        
-      {data.map((user)=> (
-        <DB data={user}/>
+      {info.map((user)=> (
+        <DB info={user}/>
       ))}</div>
        
       

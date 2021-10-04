@@ -1,22 +1,28 @@
 import styled from 'styled-components'
+import {Link} from "react-router-dom"
 
-export const SidebarNav = styled.div`
+
+export const SidebarContainer = styled.div`
+display: flex;
+flex-direction: column;
+
 grid-area: sidebar;
+width: 100%;
+
+
+
+
+`
+
+export const SidebarNav = styled(Link)`
+
 background-color: #124D40;
+height: 100vh;
+
+text-align: center;
+color: white;
 
 
 `
-
-export const SidebarHeader = styled.h1`
-text-align: left;
-padding-bottom: 50px;
-
-
-
-
-font-size: 30px;
-`
-
-
 
 

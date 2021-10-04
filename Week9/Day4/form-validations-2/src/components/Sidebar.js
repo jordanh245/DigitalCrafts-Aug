@@ -1,14 +1,29 @@
 import React from 'react'
-import { SidebarNav, SidebarHeader } from '../styled-components/SidebarStyle'
-export default function Sidebar() {
+
+import SidebarLinks from "./SidebarLinks";
+
+import { SidebarContainer } from "../styled-components/SidebarStyle";
+
+
+
+import { sidebardata } from "./SidebarLinksData";
+
+
+
+export default function Sidebar(props) {
+const viewSidebar = props.viewSidebar;
+
 	return (
-		<SidebarNav>
-			<SidebarHeader>Sidebar</SidebarHeader>
-			<SidebarHeader>Sidebar</SidebarHeader>
-			<SidebarHeader>Sidebar</SidebarHeader>
-			<SidebarHeader>Sidebar</SidebarHeader>
-			
-			
-		</SidebarNav>
-	)
+	    <>
+      {viewSidebar ? (
+        <SidebarContainer>
+          {sidebardata?.map((linkData) => (
+            <SidebarLinks linkData={linkData} />
+          ))}
+        </SidebarContainer>
+      ) : (
+        <></>
+      )}
+    </>
+  );
 }

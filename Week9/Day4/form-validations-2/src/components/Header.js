@@ -7,7 +7,9 @@ import { Headernav, UserButton, UserImg, UserHeader, UserInfo } from '../styled-
 
 const URL = "https://randomuser.me/api/";
 
-export default function Header() {
+export default function Header(props) {
+  const viewSidebar = props.viewSidebar
+ const setviewSidebar = props.setviewSidebar
   const [user, setUser] = useState({});
   const [counter, setCounter] = useState(0);
   // useEffect is a hook
@@ -37,6 +39,7 @@ export default function Header() {
 
   return (
     <Headernav>
+      <UserButton onClick={()=> setviewSidebar(!viewSidebar)}>{viewSidebar ? "Hide Sidebar" : "Show Sidebar"}</UserButton>
       <UserHeader> User Logged In</UserHeader>
       
       <UserImg src={user?.picture?.large} alt="" />

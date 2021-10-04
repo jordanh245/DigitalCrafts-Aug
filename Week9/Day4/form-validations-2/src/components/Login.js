@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { Header, FormBody, FormForm, Forminput, FormButton } from "../styled-components/FormStyle"
+import { Header, FormBody, FormForm, Forminput, FormButton, Remember, CheckBox, Forgot, New } from "../styled-components/FormStyle"
 
 
 export default function Form() {
@@ -9,19 +9,20 @@ export default function Form() {
   return (
     <FormBody>
       
-      <Header>Sign In</Header>
+      
      
       <FormForm>
+        <Header>Login to continue!</Header>
         <Forminput
           onChange={(e) =>
             setFormData({ ...formData, [e.target.name]: e.target.value })
           }
           type="text"
-          placeholder="username"
+          placeholder="Username"
           name="username"
           value={formData?.username}
         />
-        <Forminput
+        {/* <Forminput
           onChange={(e) =>
             setFormData({ ...formData, [e.target.name]: e.target.value })
           }
@@ -29,19 +30,27 @@ export default function Form() {
           placeholder="email"
           name="email"
           value={formData?.email}
-        />
+        /> */}
         <Forminput
           onChange={(e) =>
             setFormData({ ...formData, [e.target.name]: e.target.value })
           }
           type="password"
-          placeholder="password"
+          placeholder="Password"
           name="password"
           value={formData?.password}
         />
         
-       
-          <FormButton type="submit" />
+        
+        <div>
+          <CheckBox type="checkbox" name="" id="" />
+          <Remember>Remember Me</Remember>
+          <FormButton type="submit" value="LOGIN" />
+          
+        </div>
+        <Forgot>Forgot your password?</Forgot>
+        <New>New here? Sign up</New>
+        
         
       </FormForm>
     </FormBody>

@@ -4,19 +4,38 @@ import {Link} from "react-router-dom"
 
 export const SidebarContainer = styled.div`
 display: flex;
+  flex-direction: column;
+  align-items: center;
+  grid-area: sidebar;
+  width: 100%;
+  background-color: #034A56;
+  
+`
+
+
+/* display: flex;
 flex-direction: column;
 grid-area: sidebar;
-width: 100%;
+width: 100%; */
 
-`
+
 
 export const SidebarNav = styled(Link)`
-background-color: #124D40;
-height: 100vh;
 text-align: center;
-color: white;
-
-
+  width: 100%;
+  height: 2rem;
+  color: #efebe0;
+  font-size: 19px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  
 `
+
+
+
+
+
+
+
 
 

@@ -4,7 +4,8 @@ export const Headernav = styled.div`
 display: flex;
 grid-area: header;
 flex-direction: row;
-background-color: #80CBC4;
+background-color: #034A56;
+
 
 `
 

@@ -13,10 +13,6 @@ display: flex;
 `
 
 
-/* display: flex;
-flex-direction: column;
-grid-area: sidebar;
-width: 100%; */
 
 
 

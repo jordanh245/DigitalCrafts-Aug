@@ -3,6 +3,7 @@ import "./SignUpStyle.css"
 import { useMemo } from 'react'
 import {useDispatch} from "react-redux"
 import debounce  from "lodash.debounce"
+import {consoleLogVariable, IncrementCounter, DecrementCounter} from "../actions/signUpFormActions"
 export default function SignUpForm() {
 	const dispatch = useDispatch() 
 	const debounceChangeHandler = useMemo(()=> {
@@ -40,6 +41,9 @@ export default function SignUpForm() {
 				}type="text" placeholder="Password" />
 			<input type="Submit" />
 			</form>
+			<button onClick={() => consoleLogVariable("Jordan")}>print to console</button>
+			<button onClick={() => IncrementCounter(dispatch)}>Increment</button>
+			<button onClick={() => DecrementCounter(dispatch)}>Decrement</button>
 			</div>
 		</div>
 	)

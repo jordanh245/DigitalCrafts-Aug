@@ -4,8 +4,9 @@ import {createStore, applyMiddleware} from "redux";
 import {Provider} from "react-redux"
 import App from './App';
 import logger from "redux-logger"
+import thunk from "react-thunk"
 import rootReducer from './reducers/rootReducer';
-const store = createStore(rootReducer, applyMiddleware(logger))
+const store = createStore(rootReducer, applyMiddleware(logger, thunk))
 
 ReactDOM.render(
   <React.StrictMode>

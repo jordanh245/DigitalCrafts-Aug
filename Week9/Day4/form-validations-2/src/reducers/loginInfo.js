@@ -1,11 +1,13 @@
 const initialState = {
-	userName: "",
-	password: "",	
+		
 }
 
 const LoginInfo = (state=initialState, action) => {
 	switch(action.type){
-		default:
+		case "GET_USER":
+			return {...state, userData:action.payload}
+			
+			default:
 			return state;
 	}
 };

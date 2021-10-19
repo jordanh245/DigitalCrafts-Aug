@@ -1,11 +1,11 @@
 const initialState = {
-	userData: "",
+	UserData:"",
 };
 
 const UserData = (state=initialState, action) => {
 	switch (action.type) {
-		case "GET_USERDATA":
-			return {...state, userData:action.payload}
+		case "GET_USER":
+			return {...state,userData:action.payload}
 	
 		default:
 			return state;

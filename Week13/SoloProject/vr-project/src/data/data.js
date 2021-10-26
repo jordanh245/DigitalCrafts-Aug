@@ -1,6 +1,7 @@
 // insert data for headsets and other products
 const data = {
-	products: [
+	products: 
+	[
 		{
 			id:1,
 			brand: "Oculus",
@@ -48,4 +49,4 @@ const data = {
 	]
 }
 
-export default data
+export default data;

@@ -1,52 +1,57 @@
 // insert data for headsets and other products
-const data = {
-	products: 
+const initialState =
 	[
 		{
-			id:1,
+			
 			brand: "Oculus",
 			name: "Quest 2",
 			size: "128 GB",
-			price: 299
+			price: 299,
+			quantity: 1
 
 		},
 		{
-			id:2,
+			
 			brand: "Oculus",
 			name: "Quest 2",
 			size: "256 GB",
-			price: 399
+			price: 399,
+			quantity: 1
 
 		},
 		{
-			id:3,
+			
 			brand: "Valve",
 			name: "Index",
-			price: 1000
+			price: 1000,
+			quantity: 1
 
 		},
 		{
-			id:4,
+			
 			brand: "Vive",
 			name: "Pro 2",
-			price: 1400
+			price: 1400,
+			quantity: 1
 
 		},
 		{
-			id:5,
+			
 			brand: "Vive",
 			name: "Cosmos Elite",
-			price: 900
+			price: 900,
+			quantity: 1
 
 		},
 		{
-			id:6,
+			
 			brand: "HP",
 			name: "Reverb G2",
-			price: 600
+			price: 600,
+			quantity: 1
 
 		}
 	]
-}
 
-export default data;
+
+export default initialState;

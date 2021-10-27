@@ -5,13 +5,13 @@ import ProductInfo from "./ProductInfo"
 export default function Product() {
 
 	const products = useSelector((state)=> state.Products);	
-	// console.log(products.products)	
+	
 	
 
 return (
 		<div>
 			<h1>Product</h1>
-			{products.products.map((product)=> (
+			{products.map((product)=> (
 				<ProductInfo product={product}/>
 			))}
 			

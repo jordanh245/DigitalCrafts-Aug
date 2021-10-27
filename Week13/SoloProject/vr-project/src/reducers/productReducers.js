@@ -1,6 +1,6 @@
-import data from "../data/data";
+import initialState from "../data/data";
 
-const initalState = data;
+const initalState = initialState;
 
 const Products = (state=initalState,action) => {
 	switch (action.type) {

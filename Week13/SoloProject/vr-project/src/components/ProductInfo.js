@@ -1,21 +1,25 @@
 import React from 'react'
-import {useSelector} from "react-redux";
-
+import {useSelector, useDispatch} from "react-redux";
+import {addToCart} from "../actions/Cart-actions"
 
 
 
 
 export default function ProductInfo(props) {
-	console.log(props)
+	// console.log(props)
+	const dispatch = useDispatch();
+	const {product} = props
 	
+
 	
 	return (
 		<div>
 			
-			<h2>{props.product.brand}</h2>
-			<h2>{props.product.name}</h2>
-			<h2>${props.product.price}</h2>
-			<h2>{props.product.size}</h2>
+			<h1>{product.brand}</h1>
+			<h2>{product.name}</h2>
+			<p>${product.price}</p>
+			<p>{product.size}</p>
+			<button onClick={()=> addToCart(dispatch, product)}>add to cart</button>
 		</div>
 	)
 }

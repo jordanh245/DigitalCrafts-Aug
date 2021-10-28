@@ -1,27 +1,32 @@
 import React from 'react'
-import {FormStyle, LabelStyle, AreaStyle, ButtonStyle} from "../styled-components/ContactStyle"
+import {FormStyle, LabelStyle, AreaStyle, ButtonStyle, DivStyle} from "../styled-components/ContactStyle"
 function contact() {
+	
+	
+	
 	return (
 		<div>
+			<DivStyle>
 			<h1>Contact</h1>
 			
 			<LabelStyle htmlFor="">First Name</LabelStyle>
 			<FormStyle type="text" />
 			
 			<LabelStyle htmlFor="">Last Name</LabelStyle>
-			<FormStyle type="text" placeholder="Last Name"/>
+			<FormStyle type="text" />
 			
 			
 			<LabelStyle htmlFor="">Email</LabelStyle>
-			<FormStyle type="text" placeholder="Email"/>
+			<FormStyle type="text"/>
 			
-			<LabelStyle htmlFor="">Contact</LabelStyle>
+			<LabelStyle htmlFor="">Message</LabelStyle>
 			<div>
-			<AreaStyle name="" id="" cols="30" rows="10" placeholder="Reason for Contact"></AreaStyle>
+			<AreaStyle name="" id="" cols="30" rows="10" ></AreaStyle>
 			</div>
 			<div>
-			<ButtonStyle>Submit</ButtonStyle>
+			<ButtonStyle onClick={()=>{ alert('Message Sent!'); }}>Submit</ButtonStyle>
 			</div>
+			</DivStyle>
 		</div>
 	)
 }

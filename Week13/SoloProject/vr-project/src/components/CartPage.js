@@ -17,6 +17,8 @@ export default function CartPage(props) {
 			<p>${props.product.price}</p>
 			<button onClick={()=> removeFromCart(dispatch, props.product)}>Remove</button>
 			
+
+			
 			
 		</div>
 	)

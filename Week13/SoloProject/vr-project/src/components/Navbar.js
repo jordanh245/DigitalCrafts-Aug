@@ -1,5 +1,6 @@
 import react from "react";
 import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
+import { NavBarStyle, LinkStyle } from "../styled-components/NavbarStyle"
 import Home from "./Home"
 import Cart from "./Cart"
 import Contact from "./Contact"
@@ -14,12 +15,13 @@ function navbar() {
 		<div>
 			<Router>
 				<div>
-					<nav>
-						<Link to="/">Home</Link>
-						<Link to="/product">Product</Link>
-						<Link to="/cart">Cart</Link>
-						<Link to="/contact">Contact</Link>
-					</nav>
+					<NavBarStyle>
+						
+						<LinkStyle to="/">Home</LinkStyle>
+						<LinkStyle to="/product">Product</LinkStyle>
+						<LinkStyle to="/cart">Cart</LinkStyle>
+						<LinkStyle to="/contact">Contact</LinkStyle>
+					</NavBarStyle>
 				</div>
 			<Switch>
 			<Route exact path="/">

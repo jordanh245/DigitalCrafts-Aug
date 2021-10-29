@@ -15,6 +15,7 @@ function navbar() {
 		<div>
 			<Router>
 				<div>
+					
 					<NavBarStyle>
 						<ImageDiv>
 						<IconImage src={brand} alt="" />

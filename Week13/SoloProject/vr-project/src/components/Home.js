@@ -1,7 +1,9 @@
 import React from 'react'
-import {ButtonStyle, Image, ImageDiv, Center, InfoDiv } from "../styled-components/HomeStyle"
+import {ButtonStyle, Image, ImageDiv, Center, InfoDiv, WhoDiv, WhoH1, WhoP, FooterDiv, Social, SocialP} from "../styled-components/HomeStyle"
 import {Link } from 'react-router-dom'
-
+import social from "../assets/twitter (2).png"
+import social2 from "../assets/social-media.png"
+import social3 from "../assets/instagram.png"
 import background1 from "../assets/background1.png"
 
 
@@ -19,30 +21,39 @@ export default function home() {
 				
 				<Image src={background1} alt=""/>
 				<Center>
-				<h1>Stuff about vr </h1></Center>
+				
+				<h1>Brand </h1></Center>
 				
 			</ImageDiv>
 			
 			
-			{/* <div>
+			<div>
 			<Link to="/product">
     		<ButtonStyle type="button">Explore</ButtonStyle>
  			</Link>
-			</div> */}
+			</div>
 			
 			<InfoDiv>
-			<p>
-			Lorem ipsum dolor sit amet, ex integre legimus his. An affert putent sit, viderer dolores propriae vis id. Eam ei augue vocibus, tale epicuri inciderint te est. Exerci ridens adolescens usu et, natum offendit deterruisset et eam, ex qui nonumy iisque. Voluptua mnesarchum no usu, duo vidit audiam inimicus in. Quando qualisque sea te.
+			<WhoH1>Who are we?</WhoH1>
+			<WhoP>We are (brand) and we sell Virtual Reality Headsets! The community here at (brand )are committed to providing a quality user experience and customer service.</WhoP>
+			
 
-Cu per unum timeam, offendit deserunt pro et. Est possim option ex. Ex dolorum phaedrum ocurreret eam, ne lorem choro nostro ius. Nobis integre contentiones vel ea, in saepe fierent omittam has. Eu pro docendi urbanitas, detracto salutandi has an, ei ius labores debitis.
-
-Quod cetero iracundia ne ius. Ius ei malorum inermis luptatum, in ius integre explicari repudiandae. Ea posse nostrud has, usu cu tota epicuri omittam, quis etiam quodsi est et. Et usu reformidans efficiantur voluptatibus, nemore commodo nostrud ea nec. In debet oblique delenit sed, est at quas primis saperet.
-
-Paulo lucilius consetetur ei vis, pri fugit fuisset ullamcorper te. Cum at natum graeco voluptatum. Sit vocibus maiorum constituam no. Eu eum luptatum senserit, nostrud quaeque ei eos. Salutatus principes ea eam, modus erroribus ut vix. Eu vel dictas vocent honestatis.
-
-Rebum mundi usu ne, ex ludus tincidunt nam, nam mucius constituam ne. Eos ei officiis maiestatis. Rebum ancillae nominavi eam eu, utinam pertinax at mel, vel fabulas deleniti ut. Utinam definiebas sed no, ea vel hendrerit deterruisset, rebum dolorem sed cu. Usu ei everti disputationi.
-			</p>
+			
+				<WhoH1>What is Virtual Reality? </WhoH1>
+				<WhoP>VR is the use of computer technology to create a simulated environment. Once you put on one of our headsets you will be transported to many worlds providing an immersive experience. Our headsets come in a wide range of specs and price.</WhoP>
 			</InfoDiv>
+
+
+			<FooterDiv>
+				
+				
+				<Social src={social} alt="" />
+				<Social src={social3} alt="" />
+				<Social src={social2} alt="" />
+				<SocialP>Brand @2021</SocialP>
+			</FooterDiv>
+
+
 
 
 		</div>

@@ -11,6 +11,8 @@ export default function CartPage(props) {
 	
 	return (
 		<CartDivStyle>
+		
+			
 			<div>
 			<img src={product.image} alt="" width="500px" />
 			</div>

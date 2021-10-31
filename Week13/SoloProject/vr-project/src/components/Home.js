@@ -1,8 +1,8 @@
 import React from 'react'
-import {ButtonStyle, Image, ImageDiv, Center, InfoDiv, WhoDiv, WhoH1, WhoP, FooterDiv, Social, SocialP} from "../styled-components/HomeStyle"
+import {ButtonStyle, Image, ImageDiv, Center, InfoDiv, WhoH1, WhoP, FooterDiv, Social, SocialP} from "../styled-components/HomeStyle"
 import {Link } from 'react-router-dom'
 import social from "../assets/twitter (2).png"
-import social2 from "../assets/social-media.png"
+
 import social3 from "../assets/instagram.png"
 import background1 from "../assets/background1.png"
 
@@ -46,10 +46,13 @@ export default function home() {
 
 			<FooterDiv>
 				
-				
+				<a href="https://twitter.com/?lang=en">
 				<Social src={social} alt="" />
+				</a>
+				<a href="https://www.instagram.com/">
 				<Social src={social3} alt="" />
-				<Social src={social2} alt="" />
+				</a>
+				
 				<SocialP>Brand @2021</SocialP>
 			</FooterDiv>
 

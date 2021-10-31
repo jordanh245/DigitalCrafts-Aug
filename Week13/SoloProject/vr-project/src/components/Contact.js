@@ -1,14 +1,15 @@
 import React from 'react'
-import {FormStyle, LabelStyle, AreaStyle, ButtonStyle, DivStyle} from "../styled-components/ContactStyle"
+import {FormStyle, LabelStyle, AreaStyle, ButtonStyle, DivStyle, PStyle, EmailabelStyle, MessagelabelStyle, H1Style} from "../styled-components/ContactStyle"
 function contact() {
 	
 	
 	
 	return (
 		<div>
-			<DivStyle>
-			<h1>Contact</h1>
 			
+			<H1Style>We'd Love to Hear From You</H1Style>
+			<PStyle>Whether you have a question about our product, pricing, or anything else, we are standing by ready to help!</PStyle>
+			<DivStyle>
 			<LabelStyle htmlFor="">First Name</LabelStyle>
 			<FormStyle type="text" />
 			
@@ -16,10 +17,12 @@ function contact() {
 			<FormStyle type="text" />
 			
 			
-			<LabelStyle htmlFor="">Email</LabelStyle>
+			<EmailabelStyle htmlFor="">Email</EmailabelStyle>
 			<FormStyle type="text"/>
 			
-			<LabelStyle htmlFor="">Message</LabelStyle>
+			<MessagelabelStyle htmlFor="">Message</MessagelabelStyle>
+			
+			
 			<div>
 			<AreaStyle name="" id="" cols="30" rows="10" ></AreaStyle>
 			</div>

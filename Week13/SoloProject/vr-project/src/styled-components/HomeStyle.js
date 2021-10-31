@@ -12,17 +12,12 @@ margin-bottom: -300px;
   height: 1000px;
 }
 
-@media screen and (min-width: 768px) and (max-width: 1024px) {}
+
 
 
 `
 export const ButtonStyle = styled.button`
-background: transparent;
-color: black;
-font-size: 20px;
-font-weight: 100;
-padding: 10px;
-border: 1px solid black ;
+
 text-decoration: none;
 display: inline-block;
 text-align: center;
@@ -30,9 +25,29 @@ position: absolute;
 top: 50%;
 left: 50%;
 transform: translate(-49%, 500%);
+box-shadow: 3px 4px 0px 0px #276873;
+	background:linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
+	background-color:#599bb3;
+	border:1px solid #29668f;
+	color:#ffffff;
+	font-size:15px;
+	padding:10px 128px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #3d768a;;
+	margin-top: 10px;
+	margin-bottom: 30px;
+	&:hover {
+	background:linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
+	background-color:#408c99;
+	}
+	&	:active {
+	position:relative;
+	top:1px;
+	}
 
 @media screen and (min-width: 320px) and (max-width: 480px) {
-  transform: translate(136%, 580%);
+  transform: translate(25%, 480%);
+  
   font-size: 40px;
 }
 

@@ -1,5 +1,7 @@
 import React from 'react'
+import {TotalDivStyle, TotalH1, TotalButtonDiv, TotalButton} from "../styled-components/TotalStyle"
 import { useSelector } from 'react-redux';
+
 export default function Total() {
 	const cart = useSelector((state) => state.Cart);
 	let total=0;
@@ -13,9 +15,11 @@ export default function Total() {
 	}
 	return (
 		<div>
-			<h1>Total: {formatter.format(total)}</h1>
-		<button>Check-Out</button>
+			<TotalH1>Total: {formatter.format(total)}</TotalH1>
 			
+		<TotalButtonDiv>
+		<TotalButton>Check-Out</TotalButton>
+		</TotalButtonDiv>	
 		</div>
 	)
 }

@@ -1,33 +1,39 @@
 import React from 'react'
 import {useSelector, useDispatch} from "react-redux";
-import {addToCart} from "../actions/Cart-actions"
-import {ProductDivStyle, ProductImgStyle} from "../styled-components/ProductStyle"
+import {addToCart, } from "../actions/Cart-actions"
+import {ProductDivStyle, ProductButtonStyle, PageDiv, InfoDiv, ProductImg, ProductH1} from "../styled-components/ProductStyle"
+
+
 
 
 
 export default function ProductInfo(props) {
-	// console.log(props)
+	
 	const dispatch = useDispatch();
 	const {product} = props
 	
 
 	
 	return (
-		<div>
+	
+		
+		<ProductDivStyle>
 			<div>
-				<ProductImgStyle src={product.image} alt="" width="300px" />
+				<ProductImg src={product.image} alt="" width="500px" />
+				<p>{product.size}</p>
 			</div>
+			<InfoDiv>
+				<ProductH1>{product.brand} {product.name}</ProductH1>
+				<p> Includes:{product.description}</p>
+				<p>{product.pc}</p>
+				<p>Price: ${product.price}</p>
+	
+			<ProductButtonStyle onClick={()=> addToCart(dispatch, product)} >ADD TO CART</ProductButtonStyle>
+			</InfoDiv>
 			
-			<ProductDivStyle >
 			
-			<h1>{product.brand}</h1>
-			<h2>{product.name}</h2>
-			<p>${product.price}</p>
-			<p>{product.size}</p>
-			</ProductDivStyle>
-			
-			<button onClick={()=> addToCart(dispatch, product)}>add to cart</button>
-		</div>
+		</ProductDivStyle>
+		
 	)
 }
 

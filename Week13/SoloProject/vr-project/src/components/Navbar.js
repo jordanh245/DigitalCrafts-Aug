@@ -1,6 +1,6 @@
 import react from "react";
-import { BrowserRouter as Router, Link, Route, Switch, Redirect } from "react-router-dom";
-import { NavBarStyle, LinkStyle, IconImage, ImageDiv } from "../styled-components/NavbarStyle"
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { NavBarStyle, LinkStyle, IconImage, ErrorDiv, ErrorLink } from "../styled-components/NavbarStyle"
 import Home from "./Home"
 import Cart from "./Cart"
 import Contact from "./Contact"
@@ -17,9 +17,9 @@ function navbar() {
 				<div>
 					
 					<NavBarStyle>
-						<ImageDiv>
+						<div>
 						<IconImage src={brand} alt="" />
-						</ImageDiv>
+						</div>
 						<LinkStyle to="/">Home</LinkStyle>
 						<LinkStyle to="/product">Product</LinkStyle>
 						<LinkStyle to="/cart" >Cart</LinkStyle>
@@ -47,7 +47,9 @@ function navbar() {
 
 			<Route path="*">
 				<Error/>
-				<Link to="/">Click here to go to the home page.</Link>
+				<ErrorDiv>
+				<ErrorLink to="/">Click here to go to the home page.</ErrorLink>
+				</ErrorDiv>
 			</Route>
 			
 			</Switch>

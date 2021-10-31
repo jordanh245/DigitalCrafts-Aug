@@ -28,9 +28,10 @@ margin-top: 5px;
 export const LabelStyle = styled.label`
 
 display: block;
-margin-right: 230px;
+margin-right: 220px;
 color: white;
 margin-top: 10px;
+font-size: 20px;
 @media screen and (min-width: 320px) and (max-width: 480px) {
 	font-size: 40px;
 	margin-left: -100px;
@@ -76,6 +77,7 @@ display: block;
 padding-bottom: 5px;
 margin-right: 260px;
 color: white;
+font-size: 20px;
 @media screen and (min-width: 320px) and (max-width: 480px) {
 	font-size: 40px;
 	margin-left: -150px;
@@ -109,12 +111,13 @@ color: gray;
 export const MessagelabelStyle = styled.label`
 display: block;
 padding-bottom: 5px;
-margin-right: 260px;
+margin-right: 240px;
 color: white;
-font-size: 40px;
+font-size: 20px;
 
 @media screen and (min-width: 320px) and (max-width: 480px) {
-	margin-left: -110px;
+	margin-left: -120px;
+	font-size: 40px;
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
  font-size: 20px;

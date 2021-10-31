@@ -25,10 +25,6 @@ width: 10rem;
 
 
 
-@media screen and (min-width: 320px) and (max-width: 480px) {
-	
-}
-
 `
 export const IconImage = styled.img`
 width: 60px;
@@ -37,7 +33,22 @@ margin-right: 10px;
 
 
 `
-export const ImageDiv = styled.div`
+export const ErrorLink = styled(Link)`
+font-size: 50px;
+@media screen and (min-width: 320px) and (max-width: 480px) {
+	
+	margin-left: 100px;
+}
+
+`
+
+
+export const ErrorDiv = styled.div`
+@media screen and (min-width: 320px) and (max-width: 480px) {
+	
+	width: 800px;
+}
+
 
 
 `

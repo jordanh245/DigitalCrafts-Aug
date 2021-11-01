@@ -16,47 +16,47 @@ margin-bottom: -300px;
 
 
 `
-export const ButtonStyle = styled.button`
+// export const ButtonStyle = styled.button`
 
-text-decoration: none;
-display: inline-block;
-text-align: center;
-position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-49%, 500%);
-box-shadow: 3px 4px 0px 0px #276873;
-	background:linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
-	background-color:#599bb3;
-	border:1px solid #29668f;
-	color:#ffffff;
-	font-size:15px;
-	padding:10px 128px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #3d768a;;
-	margin-top: 10px;
-	margin-bottom: 30px;
-	&:hover {
-	background:linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
-	background-color:#408c99;
-	}
-	&	:active {
-	position:relative;
-	top:1px;
-	}
+// text-decoration: none;
+// display: inline-block;
+// text-align: center;
+// position: absolute;
+// top: 50%;
+// left: 50%;
+// transform: translate(-49%, 500%);
+// box-shadow: 3px 4px 0px 0px #276873;
+// 	background:linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
+// 	background-color:#599bb3;
+// 	border:1px solid #29668f;
+// 	color:#ffffff;
+// 	font-size:15px;
+// 	padding:10px 128px;
+// 	text-decoration:none;
+// 	text-shadow:0px 1px 0px #3d768a;;
+// 	margin-top: 10px;
+// 	margin-bottom: 30px;
+// 	&:hover {
+// 	background:linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
+// 	background-color:#408c99;
+// 	}
+// 	&	:active {
+// 	position:relative;
+// 	top:1px;
+// 	}
 
-@media screen and (min-width: 320px) and (max-width: 480px) {
-  transform: translate(25%, 480%);
+// @media screen and (min-width: 320px) and (max-width: 480px) {
+//   transform: translate(25%, 480%);
   
-  font-size: 40px;
-}
+//   font-size: 40px;
+// }
 
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-  transform: translate(-49%, 700%);
-font-size: 30px;
-}
+// @media screen and (min-width: 768px) and (max-width: 1024px) {
+//   transform: translate(-49%, 700%);
+// font-size: 30px;
+// }
 
-`
+// `
 
 export const ImageDiv = styled.div`
 
@@ -69,19 +69,23 @@ export const Center = styled.div`
 position: absolute;
 top: 50%;
 left: 50%;
-transform: translate(-52%, -250%);
+transform: translate(-52%, -100%);
+font-size: 50px;
 
 @media screen and (min-width: 320px) and (max-width: 480px) {
 position: absolute;
 top: 50%;
 left: 40%;
-transform: translate(325%, -200%);
+transform: translate(14%, -100%);
+font-size: 30px;
+width: 500px;
 }
   
 @media screen and (min-width: 768px) and (max-width: 1024px) {
 
- 
-transform: translate(-50%, -200%);
+ font-size: 40px;
+ width: 700px;
+transform: translate(-50%, -100%);
   
 }
 `

@@ -4,9 +4,11 @@ export const TotalH1 = styled.h1`
 text-align: right;
 margin-right: 150px;
 @media screen and (min-width: 320px) and (max-width: 480px) {
-	margin-left: 330px;
+	margin-left: 150px;
 	font-size: 60px;
-	text-align: right;
+	width: 600px;
+	text-align: center;
+	
 	
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
@@ -18,7 +20,7 @@ export const TotalButtonDiv = styled.div`
 float: right;
 margin-right: 150px;
 @media screen and (min-width: 320px) and (max-width: 480px) {
-	margin-right: -280px;
+	margin-right: -290px;
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
 	margin-right: 40px;
@@ -47,6 +49,7 @@ box-shadow: 3px 4px 0px 0px #276873;
 	}
 	@media screen and (min-width: 320px) and (max-width: 480px) {
 	font-size: 40px;
+	
 	
 	
 }

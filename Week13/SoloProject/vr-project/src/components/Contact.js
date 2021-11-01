@@ -8,7 +8,7 @@ function contact() {
 		<div>
 			
 			<H1Style>We'd Love to Hear From You</H1Style>
-			<PStyle>Whether you have a question about our product, pricing, or anything else, we are standing by ready to help!</PStyle>
+			<PStyle>Whether you have a question about our products, pricing, or anything else, we are standing by ready to help!</PStyle>
 			<DivStyle>
 			<LabelStyle htmlFor="">First Name</LabelStyle>
 			<FormStyle type="text" />
@@ -27,7 +27,7 @@ function contact() {
 			<AreaStyle name="" id="" cols="30" rows="10" ></AreaStyle>
 			</div>
 			<div>
-			<ButtonStyle onClick={()=>{ alert('Message Sent!'); }}>Submit</ButtonStyle>
+			<ButtonStyle onClick={()=>{ alert('Message Sent!'); }}>SUBMIT</ButtonStyle>
 			</div>
 			</DivStyle>
 		</div>

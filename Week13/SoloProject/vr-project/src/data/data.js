@@ -10,10 +10,6 @@ import playstation from "../assets/PlayStation.png"
 const initialState =
 	[
 		
-		
-		
-		
-		
 		{
 			
 			brand: "Valve",

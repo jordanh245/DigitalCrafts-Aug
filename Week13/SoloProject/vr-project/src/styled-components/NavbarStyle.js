@@ -11,7 +11,7 @@ padding: 2px;
 
 @media screen and (min-width: 320px) and (max-width: 480px) {
 	width: 906PX;
-	font-size: 25px;
+	font-size: 45px;
 	
 }
 
@@ -31,10 +31,15 @@ width: 60px;
 margin-left: 10px;
 margin-right: 10px;
 
+@media screen and (min-width: 320px) and (max-width: 480px) {
+width: 100px;}
 
 `
 export const ErrorLink = styled(Link)`
 font-size: 50px;
+text-decoration: none;
+color: black;
+
 @media screen and (min-width: 320px) and (max-width: 480px) {
 	
 	margin-left: 100px;

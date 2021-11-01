@@ -9,6 +9,10 @@ display: grid;
 
 
 `
+export const Price = styled.p`
+color: gray;
+`
+
 export const ProductImg = styled.img`
 @media screen and (min-width: 320px) and (max-width: 480px) {
 	width: 400px;

@@ -22,7 +22,7 @@ export default function Total() {
 			<TotalH1>Total: {formatter.format(total)}</TotalH1>
 			
 		<TotalButtonDiv>
-		<TotalButton>Check-Out</TotalButton>
+		<TotalButton onClick={()=>{ alert('THANK YOU FOR YOUR PURCHASE!'); }}>CHECK-OUT</TotalButton>
 		</TotalButtonDiv>	
 		</div>
 	)

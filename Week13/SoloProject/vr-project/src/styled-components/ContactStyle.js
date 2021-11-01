@@ -11,6 +11,7 @@ border: 1px solid black;
 @media screen and (min-width: 320px) and (max-width: 480px) {
 	width: 450px;
 	padding: 30px;
+	font-size: 50px;
 }
 
 
@@ -23,6 +24,8 @@ margin-top: 5px;
 @media screen and (min-width: 320px) and (max-width: 480px) {
 	width: 500px;
 	height: 300px;
+	font-size: 40px;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 `
 export const LabelStyle = styled.label`
@@ -95,7 +98,7 @@ width: 500px;
 border-radius: 10px;
 @media screen and (min-width: 320px) and (max-width: 480px) {
 	margin-left: 100px;
-	height: 1000px;
+	height: 1100px;
 	width: 700px;
 }
 `

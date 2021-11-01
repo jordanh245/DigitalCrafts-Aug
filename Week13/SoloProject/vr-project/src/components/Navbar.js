@@ -21,7 +21,7 @@ function navbar() {
 						<IconImage src={brand} alt="" />
 						</div>
 						<LinkStyle to="/">Home</LinkStyle>
-						<LinkStyle to="/product">Product</LinkStyle>
+						<LinkStyle to="/products">Products</LinkStyle>
 						<LinkStyle to="/cart" >Cart</LinkStyle>
 						<LinkStyle to="/contact">Contact</LinkStyle>
 					</NavBarStyle>
@@ -41,14 +41,14 @@ function navbar() {
 			<Contact/>
 			</Route>
 
-			<Route path="/product">
+			<Route path="/products">
 			<Products/>
 			</Route>
 
 			<Route path="*">
 				<Error/>
 				<ErrorDiv>
-				<ErrorLink to="/">Click here to go to the home page.</ErrorLink>
+				<ErrorLink to="/">Click here to go home.</ErrorLink>
 				</ErrorDiv>
 			</Route>
 			

@@ -22,20 +22,20 @@ export default function home() {
 				<Image src={background1} alt=""/>
 				<Center>
 				
-				<h1>Brand </h1></Center>
+				<h1>Vr Emporium </h1></Center>
 				
 			</ImageDiv>
 			
 			
-			<div>
+			{/* <div>
 			<Link to="/product">
     		<ButtonStyle type="button">Explore</ButtonStyle>
  			</Link>
-			</div>
+			</div> */}
 			
 			<InfoDiv>
 			<WhoH1>Who are we?</WhoH1>
-			<WhoP>We are (brand) and we sell Virtual Reality Headsets! The community here at (brand )are committed to providing a quality user experience and customer service.</WhoP>
+			<WhoP>We are Vr Emporium and we sell virtual reality headsets! The community here are committed to providing a quality user experience and customer service.</WhoP>
 			
 
 			
@@ -53,7 +53,7 @@ export default function home() {
 				<Social src={social3} alt="" />
 				</a>
 				
-				<SocialP>Brand @2021</SocialP>
+				<SocialP>Vr Emporium @2021</SocialP>
 			</FooterDiv>
 
 

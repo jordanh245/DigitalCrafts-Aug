@@ -6,6 +6,12 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.14",
+    "npm": "^8.1.2",
+    "pg": "^8.7.1",
+    "pg-pool": "^3.4.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-logger": "^1.1.0",
@@ -15,6 +21,7 @@
     "react-scripts": "4.0.3",
     "redux": "^4.1.1",
     "redux-logger": "^3.0.6",
+    "sequelize": "^6.9.0",
     "styled-components": "^5.3.3",
     "web-vitals": "^1.0.1"
   },
@@ -41,5 +48,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "This website was made to fulfill the requirements of our Front End Solo Project.",
+  "main": "index.js",
+  "devDependencies": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }

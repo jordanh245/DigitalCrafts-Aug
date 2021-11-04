@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "root",
-    "password": null,
-    "database": "database_development",
-    "host": "127.0.0.1",
+    "username": "kjtwwmvu",
+    "password": "cjGdbEUKTgOi8Ztz4nHtkTjygOEJazWD",
+    "database": "kjtwwmvu",
+    "host": "fanny.db.elephantsql.com ",
     "dialect": "mysql"
   },
   "test": {

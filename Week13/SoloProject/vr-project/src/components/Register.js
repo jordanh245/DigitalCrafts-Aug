@@ -1,4 +1,5 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
+
 import { useSelector, useDispatch } from 'react-redux'
 export default function Register() {
 	const dispatch = useDispatch()
@@ -8,29 +9,23 @@ export default function Register() {
 	const [password, setPassword] = useState("");
 
 
-	const enterForm = (e) => {
-		e.perventDefault();
-			fetch('http://localhost:3001/register',
-			{
-				method: 'POST',
-				body: JSON.stringify({
-					firstname,
-					lastname,
-					email,
-					password
-				}),
-				
-				headers: {
-					'Content-type': 'application/json',
-				},
-				
-			})
-			.then((res)=> res.json())
-		}
+useEffect(()=> {
+	const fetchUserData = async () => {
+		const userData = await fetch('http://localhost:3001/readUser')
+		.then(res => res.json());
+
+		console.log(userData.rows)
+		
+	}
+	fetchUserData()
+},[])
+
+
+	
 	
 	return (
 		<div>
-			<form action="" onSubmit={enterForm}>
+			<form action="" >
 		<input type="text" placeholder="firstname"  onChange={(e)=> setFirstName(e.target.value)}/>
 		<input type="text" placeholder="lastname"  onChange={(e)=> setLastName(e.target.value)}/>
 		<input type="email" placeholder="email"   onChange={(e)=> setEmail(e.target.value)}/>

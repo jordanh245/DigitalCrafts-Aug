@@ -26,7 +26,7 @@ app.post("/register", (req, res) => {
 })
 	
 
-app.post("/readUser", (req, res) => {
+app.get("/readUser", (req, res) => {
 	creds.connect(async()=> {
 		try { 
 			const userData = await creds.query(`SELECT * FROM users`);
@@ -40,12 +40,12 @@ app.post("/readUser", (req, res) => {
 })
 
 // product route 
-app.post("/readProducts", (req, res) => {
+app.get("/readProducts", (req, res) => {
 	creds.connect(async()=> {
 		try { 
-			const userData = await creds.query(`SELECT * FROM products`);
-			res.send(userData);
-
+			const productData = await creds.query(`SELECT * FROM products`);
+			res.send(productData);
+			
 	}catch(err){
 		res.send(err);
 	}

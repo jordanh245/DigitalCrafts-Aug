@@ -7,7 +7,7 @@ import Contact from "./Contact"
 import Products from "./Product"
 import Error from "./Error";
 import brand from "../assets/vr-glasses2.png"
-
+import Register from "./Register";
 
 
 function navbar() {
@@ -24,6 +24,7 @@ function navbar() {
 						<LinkStyle to="/products">Products</LinkStyle>
 						<LinkStyle to="/cart" >Cart</LinkStyle>
 						<LinkStyle to="/contact">Contact</LinkStyle>
+						<LinkStyle to="/register">Register</LinkStyle>
 					</NavBarStyle>
 				</div>
 			
@@ -43,6 +44,10 @@ function navbar() {
 
 			<Route path="/products">
 			<Products/>
+			</Route>
+
+			<Route path="/register">
+			<Register/>
 			</Route>
 
 			<Route path="*">

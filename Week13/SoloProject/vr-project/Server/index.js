@@ -9,6 +9,9 @@ const PORT = 3001;
 app.use(express.json());
 app.use(cors());
 
+
+
+// user routes
 app.post("/register", (req, res) => {
 	creds.connect(async()=> {
 		try{
@@ -21,8 +24,35 @@ app.post("/register", (req, res) => {
 	})
 
 })
-		
-		
+	
+
+app.post("/readUser", (req, res) => {
+	creds.connect(async()=> {
+		try { 
+			const userData = await creds.query(`SELECT * FROM users`);
+			res.send(userData);
+
+	}catch(err){
+		res.send(err);
+	}
+	})
+	
+})
+
+// product route 
+app.post("/readProducts", (req, res) => {
+	creds.connect(async()=> {
+		try { 
+			const userData = await creds.query(`SELECT * FROM products`);
+			res.send(userData);
+
+	}catch(err){
+		res.send(err);
+	}
+	})
+	
+})
+
 
 
 app.listen(PORT, console.log(`working ${PORT}`))

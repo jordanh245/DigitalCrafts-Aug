@@ -11,14 +11,18 @@ export default function Register() {
 
 useEffect(()=> {
 	const fetchUserData = async () => {
-		const userData = await fetch('http://localhost:3001/readUser')
-		.then(res => res.json());
+		const userData = await fetch('http://localhost:3003/readUser')
+		const json = await userData.json()
+            
 
 		console.log(userData.rows)
-		
+		dispatch({type: "LOAD_USER",payload:json.rows});
+        
 	}
 	fetchUserData()
 },[])
+
+
 
 
 	

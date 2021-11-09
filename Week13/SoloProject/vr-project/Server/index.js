@@ -2,9 +2,9 @@ const express = require("express");
 const app = express();
 const cors= require("cors");
 const creds = require("./db");
-const PORT = 3001;
-
-
+const PORT = 3006;
+const bcrypt = require("bcrypt")
+const jwt = require('jsonwebtoken')
 
 app.use(express.json());
 app.use(cors());
@@ -15,8 +15,11 @@ app.use(cors());
 app.post("/register", (req, res) => {
 	creds.connect(async()=> {
 		try{
-			const user = await creds.query(`INSERT INTO users (firstname, lastname, email, password) VALUES ('${req.body.firstname}', '${req.body.lastname}', '${req.body.email}', '${req.body.password}')`)
-			res.send(data);
+			const salt = await bcrypt.genSalt();
+			const hashedPassword = await bcrypt.hash(req.body.password, salt)
+			
+			const user = await creds.query(`INSERT INTO users (firstname, lastname, email, password) VALUES ('${req.body.firstname}', '${req.body.lastname}', '${req.body.email}', '${hashedPassword}')`)
+			res.send(user.body);
 
 		}catch(err){
 			res.send(err);
@@ -25,6 +28,25 @@ app.post("/register", (req, res) => {
 
 })
 	
+
+
+// app.post("/login", (req, res) => {
+// 	creds.connect( async()=> {
+	
+// 	const email = req.body.email
+// 	const password = req.body.username
+
+// 	users.find((users) => users.email === email && users.password === password)
+// 	if(users) {
+// 		jwt.sign({email: users.email}, "SECRETKEY (CHANGE THIS)")
+// 		res.json({success: true, token:token})
+// 	}else {
+// 		res.json({success:false, message: "not aythenticated"})
+		
+	
+// 	}
+// 	})
+// })
 
 app.get("/readUser", (req, res) => {
 	creds.connect(async()=> {

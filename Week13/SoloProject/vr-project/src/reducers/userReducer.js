@@ -1,14 +1,12 @@
-// import initialState from "../data/data";
-
 const initalState = [];
 
-const Products = (state=initalState,action) => {
+const Users = (state=initalState,action) => {
 	switch (action.type) {
-		case "LOAD_PRODUCTS":
+		case "LOAD_USER":
 			console.log(action.payload)
 			return [...state, ...action.payload]
 		default:
 			return state;
 	}
 }
-export default Products;
+export default Users;

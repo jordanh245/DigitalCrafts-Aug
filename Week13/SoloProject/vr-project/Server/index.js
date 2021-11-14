@@ -2,14 +2,16 @@ const express = require("express");
 const app = express();
 const cors= require("cors");
 const creds = require("./db");
-const PORT = 3006;
+const PORT = 3002;
 const bcrypt = require("bcrypt")
-const jwt = require('jsonwebtoken')
+const jwt = require('jsonwebtoken');
+
+
 
 app.use(express.json());
 app.use(cors());
 
-
+const secretToken = "putinenv"
 
 // user routes
 app.post("/register", (req, res) => {
@@ -19,6 +21,7 @@ app.post("/register", (req, res) => {
 			const hashedPassword = await bcrypt.hash(req.body.password, salt)
 			
 			const user = await creds.query(`INSERT INTO users (firstname, lastname, email, password) VALUES ('${req.body.firstname}', '${req.body.lastname}', '${req.body.email}', '${hashedPassword}')`)
+			console.log(user)
 			res.send(user.body);
 
 		}catch(err){
@@ -30,37 +33,68 @@ app.post("/register", (req, res) => {
 	
 
 
-// app.post("/login", (req, res) => {
-// 	creds.connect( async()=> {
+
+
+app.post("/login", (req, res) => {
+
+const email = req.body.email;
+const password = req.body.password
+
+
+const compare = async (info, res) => {
+	const checkPass = await bcrypt.compare(password, info.rows[0].password)
 	
-// 	const email = req.body.email
-// 	const password = req.body.username
+	if (checkPass) {
+		const jsonToken =jwt.sign({email: req.body.email}, secretToken)
+		res.json({
+			firstname: info.rows[0].firstname,
+			lastname: info.rows[0].lastname,
+			email: info.rows[0].email,
+			user_id: info.rows[0].user_id,
+			 jsonToken: jsonToken})
+		res.send(res)
 
-// 	users.find((users) => users.email === email && users.password === password)
-// 	if(users) {
-// 		jwt.sign({email: users.email}, "SECRETKEY (CHANGE THIS)")
-// 		res.json({success: true, token:token})
-// 	}else {
-// 		res.json({success:false, message: "not aythenticated"})
-		
-	
-// 	}
-// 	})
-// })
-
-app.get("/readUser", (req, res) => {
-	creds.connect(async()=> {
-		try { 
-			const userData = await creds.query(`SELECT * FROM users`);
-			res.send(userData);
-
-	}catch(err){
-		res.send(err);
+	} else {
+		res.send("Incorrect pass or email/ not authenticated")
 	}
-	})
-	
+}
+creds.connect (()=> {
+	if(email) {
+		creds.query(
+			`SELECT * from "users" WHERE email = '${email}'`,
+			(error, info) => {
+				if (info) {
+					compare(info, res)
+				} else {
+					res.send(error)
+				}
+			}
+		);
+	} else {
+		res.send("Invalid");
+		
+	}
 })
 
+
+})
+
+
+
+
+// app.post("/updateUser", (req, res) => {
+//creds.connect(()=> {
+	// creds.query(`UPDATE "users" SET firstname=${req.body.firstname}, ${req.body.lastname}, ${req.body.email}, ${req.body.password} WHERE `)
+
+
+	
+// }
+// app.post("/deleteUser", (req, res) => {
+// 	creds.connect(()=> {
+// 		creds.query ()
+
+
+// }
 // product route 
 app.get("/readProducts", (req, res) => {
 	creds.connect(async()=> {
@@ -74,6 +108,17 @@ app.get("/readProducts", (req, res) => {
 	})
 	
 })
+
+
+
+
+
+
+
+
+
+
+
 
 
 

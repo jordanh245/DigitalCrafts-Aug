@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@stripe/react-stripe-js": "github:stripe/react-stripe-js",
+    "@stripe/stripe-js": "github:stripe/stripe-js",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
@@ -22,6 +24,7 @@
     "redux": "^4.1.1",
     "redux-logger": "^3.0.6",
     "sequelize": "^6.9.0",
+    "stripe": "^8.188.0",
     "styled-components": "^5.3.3",
     "web-vitals": "^1.0.1"
   },
@@ -31,7 +34,6 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -52,7 +54,10 @@
   },
   "description": "This website was made to fulfill the requirements of our Front End Solo Project.",
   "main": "index.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "install-peers": "^1.0.3"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC"

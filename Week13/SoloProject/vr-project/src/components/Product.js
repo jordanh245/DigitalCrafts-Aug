@@ -13,7 +13,7 @@ export default function Product() {
 
 	useEffect(() => {
         const fetchData = async () => {
-            const data = await fetch('http://localhost:3003/readProducts')
+            const data = await fetch('http://localhost:3002/readProducts')
 			const json = await data.json()
             console.log(json)
 			dispatch({type: "LOAD_PRODUCTS",payload:json.rows});

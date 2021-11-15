@@ -4,7 +4,7 @@ import React, {useState, useEffect}from 'react'
 import {useSelector, useDispatch} from "react-redux";
 import ProductInfo from "./ProductInfo"
 
-export default function Product() {
+export default function Product(props) {
 	const dispatch = useDispatch()
 	const products = useSelector((state)=> state.Products);	
 	 
@@ -13,7 +13,7 @@ export default function Product() {
 
 	useEffect(() => {
         const fetchData = async () => {
-            const data = await fetch('http://localhost:3002/readProducts')
+            const data = await fetch('http://localhost:3000/readProducts')
 			const json = await data.json()
             console.log(json)
 			dispatch({type: "LOAD_PRODUCTS",payload:json.rows});

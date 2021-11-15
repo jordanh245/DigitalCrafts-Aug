@@ -21,7 +21,8 @@
     "pg-pool": "^3.4.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "stripe": "^8.188.0"
+    "stripe": "^8.188.0",
+    "uuidv4": "^6.2.12"
   },
   "devDependencies": {
     "install-peers": "^1.0.3"

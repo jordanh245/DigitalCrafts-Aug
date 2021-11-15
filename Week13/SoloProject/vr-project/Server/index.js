@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const cors= require("cors");
 const creds = require("./db");
-const PORT = 3002;
+const PORT = 3000;
 const bcrypt = require("bcrypt")
 const jwt = require('jsonwebtoken');
 
@@ -21,8 +21,8 @@ app.post("/register", (req, res) => {
 			const hashedPassword = await bcrypt.hash(req.body.password, salt)
 			
 			const user = await creds.query(`INSERT INTO users (firstname, lastname, email, password) VALUES ('${req.body.firstname}', '${req.body.lastname}', '${req.body.email}', '${hashedPassword}')`)
-			console.log(user)
-			res.send(user.body);
+			
+			
 
 		}catch(err){
 			res.send(err);
@@ -82,19 +82,20 @@ creds.connect (()=> {
 
 
 
-// app.post("/updateUser", (req, res) => {
-//creds.connect(()=> {
-	// creds.query(`UPDATE "users" SET firstname=${req.body.firstname}, ${req.body.lastname}, ${req.body.email}, ${req.body.password} WHERE `)
-
 
 	
-// }
-// app.post("/deleteUser", (req, res) => {
-// 	creds.connect(()=> {
-// 		creds.query ()
 
-
+// app.delete("/deleteUserInfo", (req, res) => {
+// 	creds.connect((err)=> {
+// 		try{
+// 		creds.query (`DELETE FROM "users" WHERE email = ${req.body.email}`)
+// 		}catch(err){
+// 			res.send(err);
+// 		}
+// 	})
 // }
+// )
+
 // product route 
 app.get("/readProducts", (req, res) => {
 	creds.connect(async()=> {
@@ -110,6 +111,27 @@ app.get("/readProducts", (req, res) => {
 })
 
 
+
+
+
+
+
+
+
+app.post('/pay', async (req, res) => {
+  const {email} = req.body 
+	
+	const paymentIntent = await stripe.paymentIntents.create({
+	amount: 5000,
+	currency: 'usd',
+	
+	metadata: {integration_check: 'accept_a_payment'},
+	receipt_email: email,
+  });
+  res.json({'client_secret': paymentIntent['client_secret']})
+});
+
+const stripe = require('stripe')('sk_test_51Jvn4JK9lSkN4Pbd8xMbPYA1K5C67Ajj0RO2eSaej0WJrALaQgkrALhZPXdI467qOx3bRXvLvXhoNSnjFkyXh9iJ00hw3bK1J1')
 
 
 

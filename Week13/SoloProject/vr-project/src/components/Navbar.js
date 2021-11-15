@@ -9,7 +9,7 @@ import Error from "./Error";
 import brand from "../assets/vr-glasses2.png"
 import Register from "./Register";
 import Login from "./Login";
-
+import Account from "./Account";
 
 function navbar() {
 	return (
@@ -27,6 +27,7 @@ function navbar() {
 						<LinkStyle to="/contact">Contact</LinkStyle>
 						<LinkStyle to="/register">Register</LinkStyle>
 						<LinkStyle to="/login">Login</LinkStyle>
+						<LinkStyle to="/account">Account</LinkStyle>
 					</NavBarStyle>
 				</div>
 			
@@ -54,6 +55,11 @@ function navbar() {
 
 			<Route path="/login">
 			<Login/>
+			</Route>
+			
+			
+			<Route path="/account">
+			<Account/>
 			</Route>
 
 			<Route path="*">

@@ -66,7 +66,7 @@ app.post("/login", (req, res) => {
  app.post("/user", authenticate, (req, res)=> {});
 
 
-app.get('/account/:email', authenticate, (req, res) => {
+app.get('/account/:email', (req, res) => {
 	
 	const email = req.params.email
 	const authHeader = req.headers['authorization'];

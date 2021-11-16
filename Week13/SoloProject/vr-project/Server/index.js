@@ -5,6 +5,8 @@ const creds = require("./db");
 const PORT = 3000;
 const bcrypt = require("bcrypt")
 const jwt = require('jsonwebtoken');
+const authenticate = require('./Middleware/AuthMiddleware')
+const { useStore } = require("react-redux");
 
 
 
@@ -30,54 +32,117 @@ app.post("/register", (req, res) => {
 	})
 
 })
-	
-
 
 
 
 app.post("/login", (req, res) => {
-
-const email = req.body.email;
-const password = req.body.password
-
-
-const compare = async (info, res) => {
-	const checkPass = await bcrypt.compare(password, info.rows[0].password)
-	
-	if (checkPass) {
-		const jsonToken =jwt.sign({email: req.body.email}, secretToken)
-		res.json({
-			firstname: info.rows[0].firstname,
-			lastname: info.rows[0].lastname,
-			email: info.rows[0].email,
-			user_id: info.rows[0].user_id,
-			 jsonToken: jsonToken})
-		res.send(res)
-
-	} else {
-		res.send("Incorrect pass or email/ not authenticated")
-	}
-}
-creds.connect (()=> {
-	if(email) {
-		creds.query(
-			`SELECT * from "users" WHERE email = '${email}'`,
-			(error, info) => {
-				if (info) {
-					compare(info, res)
-				} else {
-					res.send(error)
-				}
+	const {email, password} = req.body;
+	const loginConst = async () => {
+		try {
+			const userInfo = await creds.query(
+				`SELECT * FROM users WHERE email='${email}'`
+			);
+			const userRight = await bcrypt.compare(
+				password,
+				userInfo.rows[0].password
+			);
+			if (userRight) {
+				const token = jwt.sign({email:email}, secretToken);
+				res.json({success: true, token: token});
+				console.log("working")
+			} else {
+				res.json({
+					success: false ,message:"not working"
+				});
 			}
-		);
-	} else {
-		res.send("Invalid");
+		}catch (error) {
+			console.log(error)
+		}
+	};
+	creds.connect(()=> {
+		loginConst();
+	});
+ });
+ app.post("/user", authenticate, (req, res)=> {});
+
+
+app.get('/account/:email', authenticate, (req, res) => {
+	
+	const email = req.params.email
+	const authHeader = req.headers['authorization'];
+	// console.log(authHeader.split(' ')[1])
+	if(authHeader) {
+		let token = authHeader.split(' ')[1]
 		
+		try {
+			const decoded = jwt.verify(token, secretToken);
+			
+			if (decoded) {
+				const email = decoded.email;
+				creds.connect(async () => {
+					const userAccount = await creds.query(
+						`SELECT * FROM users WHERE email= '${email}'`
+					);
+					res.json(userAccount);
+					
+				});
+			}else {
+				res.json({success: false, message: "not a user"});
+			}
+		}catch (error) {
+			res
+			.status(401).json({success: false, message:"token is wrong"});
+		}
+	}else {
+		res
+		.status(401).json({success: false, message: "no headers"});
+
 	}
-})
+});
+// OLD DELETE THIS WHEN YOU COMPLETE THE OTHER VERSION
+// app.post("/login", (req, res) => {
+
+// const email = req.body.email;
+// const password = req.body.password
 
 
-})
+// const compare = async (info, res) => {
+// 	const checkPass = await bcrypt.compare(password, info.rows[0].password)
+	
+// 	if (checkPass) {
+// 		const jsonToken =jwt.sign({email: req.body.email}, secretToken)
+// 		res.json({
+// 			firstname: info.rows[0].firstname,
+// 			lastname: info.rows[0].lastname,
+// 			email: info.rows[0].email,
+// 			user_id: info.rows[0].user_id,
+// 			 jsonToken: jsonToken})
+// 		res.send(res)
+
+// 	} else {
+// 		res.send("Incorrect pass or email/ not authenticated")
+// 	}
+// }
+// creds.connect (()=> {
+// 	if(email) {
+// 		creds.query(
+// 			`SELECT * from "users" WHERE email = '${email}'`,
+// 			(error, info) => {
+// 				if (info) {
+// 					compare(info, res)
+// 				} else {
+// 					res.send(error)
+// 				}
+// 			}
+// 		);
+// 	} else {
+// 		res.send("Invalid");
+		
+// 	}
+// })
+
+
+// })
 
 
 
@@ -117,7 +182,7 @@ app.get("/readProducts", (req, res) => {
 
 
 
-
+// stripe
 app.post('/pay', async (req, res) => {
   const {email} = req.body 
 	

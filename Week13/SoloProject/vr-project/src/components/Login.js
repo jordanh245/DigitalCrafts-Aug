@@ -5,7 +5,7 @@ import {connect } from "react-redux"
 import {useHistory} from "react-router-dom"
 
 
-export default function Login() {
+ function Login(props) {
 	
 	const [loginInfo, setLoginInfo] = useState({
 		email:"",
@@ -39,16 +39,14 @@ export default function Login() {
 			if (result.success === true) {
 				const token = result.token
 				localStorage.setItem("jsonwebtoken", token);
-				history.push("/account")
+				props.onLoggedIn();
+				props.history.push("/account")
 			}
 		})
 	
 	};
 
 
-// const  handleAccount = () => {
-
-// }
 
 
 	return (
@@ -63,8 +61,11 @@ export default function Login() {
 		</div>
 	)
 	}
+const mapDispatchToProps = (dispatch) => {
+	return {
+		onLoggedIn: () => dispatch({type: "ON_LOGGED_IN"})
+	};
+};
 
-
+export default connect(null, mapDispatchToProps)(Login);
 	
-// onChange={handleChange}
-// onClick={handleLogin}

@@ -1,6 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
-import NavbarInfo from "./NavbarInfo";
+
 import {
   NavBarStyle,
   LinkStyle,
@@ -9,12 +8,19 @@ import {
   ErrorLink,
 } from "../styled-components/NavbarStyle";
 import {connect} from "react-redux"
-// MENU!!!!!!!!!!!
+// MENU!!!!!
 
 function NavLinks(props) {
+  
+  const checkLogin = localStorage.getItem("jsonwebtoken")
   return (
-    <div>
+   
       <NavBarStyle>
+        
+         {props.isLoggedIn ? null : <div><LinkStyle to="/login">Login</LinkStyle></div>}
+
+        {props.isLoggedIn ? <div><LinkStyle to="/account">Account</LinkStyle></div>: null}
+        
         <LinkStyle to="/">Home</LinkStyle>
 
         <LinkStyle to="/products">Products</LinkStyle>
@@ -23,14 +29,12 @@ function NavLinks(props) {
 
         <LinkStyle to="/contact">Contact</LinkStyle>
 
-        <LinkStyle to="/register">Register</LinkStyle>
+       
 
-        <LinkStyle to="/login">Login</LinkStyle>
-
-        {props.isLoggedIn ? <LinkStyle to="/account">Account</LinkStyle> : null}
+       
 
       </NavBarStyle>
-    </div>
+  
   );
 }
 
@@ -40,5 +44,5 @@ const mapStateToProps = (state) => {
 	  isLoggedIn: state.isLoggedIn,
 	};
   };
-  
+
 export default connect(mapStateToProps)(NavLinks);

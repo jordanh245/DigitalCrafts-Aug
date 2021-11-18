@@ -55,6 +55,7 @@ font-size: 23px;
 margin-top: 100px;
 text-align: left;
 
+
 @media screen and (min-width: 320px) and (max-width: 480px) {
 	font-size: 40px;
 	width: 500px;

@@ -20,14 +20,16 @@ function App() {
       <BrowserRouter>
       <NavbarInfo>
         <Switch>
+          <Route exact path = "/login" component ={Login}/>
+          <Route exact path = "/account" component ={Account}/>
+         
+          
           <Route exact path = "/" component ={Home}/>
           <Route exact path = "/cart" component ={Cart}/>
           <Route exact path = "/contact" component ={Contact}/>
           <Route exact path = "/products" component ={Products}/>
           <Route exact path = "/register" component ={Register}/>
-          <Route exact path = "/login" component ={Login}/>
-          <Route exact path = "/account" component ={Account}/>
-          <Route exact path = "/" component ={Home}/>
+          
         </Switch>
         </NavbarInfo>
       </BrowserRouter>

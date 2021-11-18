@@ -43,7 +43,7 @@ import {useHistory} from "react-router-dom"
 				props.history.push("/account")
 			}
 		})
-	
+		// window.location.reload(false);
 	};
 
 
@@ -57,7 +57,7 @@ import {useHistory} from "react-router-dom"
 			<input type="text"  placeholder="password" 
             onChange={(e) => setLoginInfo({...loginInfo, [e.target.name]:e.target.value})} name="password"/>
 			<button onClick={(e)=>handleLogin(e)}>SUBMIT</button>
-			
+			<a href="/register">New here? Click here to register!</a>
 		</div>
 	)
 	}

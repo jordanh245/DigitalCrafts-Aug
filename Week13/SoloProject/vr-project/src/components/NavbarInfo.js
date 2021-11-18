@@ -1,6 +1,6 @@
 
 
-// BASE LAYOUT!!!!!!!!!!
+// BASE LAYOUT!!!!!!!!
 
 import React from "react";
 import { connect } from "react-redux";

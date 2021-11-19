@@ -118,7 +118,7 @@ app.post("/create-checkout-session", async (req, res) => {
   const session = await stripe.checkout.sessions.create({
     line_items: [
       {
-        price: "price_1Jw91tK9lSkN4PbdC3jWmXwM",
+        price: "price_1JxYjZK9lSkN4PbdutSP8CdV",
         quantity: 1,
       },
     ],
@@ -181,6 +181,7 @@ app.get("/success", async (req, res) => {
 		</div>
 		  <h1>Success</h1> 
 		  <p>We received your purchase!<br/> Your order will be shipped shortly!</p>
+    
 		</div>
 	  </body>
   </html>`

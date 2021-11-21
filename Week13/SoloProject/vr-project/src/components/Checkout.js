@@ -120,15 +120,15 @@
 
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router";
-
+import { CheckoutButtonStyle} from "../styled-components/CheckStyle"
 
 const ProductDisplay = () => (
   <section>
 
     <form action="http://localhost:3000/create-checkout-session" method="POST">
-      <button type="submit">
+      <CheckoutButtonStyle type="submit">
         Checkout
-      </button>
+      </CheckoutButtonStyle>
     </form>
   </section>
 );

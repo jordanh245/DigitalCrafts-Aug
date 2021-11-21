@@ -5,6 +5,7 @@ import {connect } from "react-redux"
 import {useHistory} from "react-router-dom"
 import "../loginstyle.css"
 
+
  function Login(props) {
 	
 	const [loginInfo, setLoginInfo] = useState({
@@ -44,32 +45,26 @@ import "../loginstyle.css"
 
 
 	return (
-		<div>
-			  <div class="login-page">
-      <div class="form">
-        <div class="login">
-          <div class="login-header">
+		
+			  <div className="login-page">
+      <div className="form">
+        <div className="login">
+          <div className="login-header">
             <h3>LOGIN</h3>
             <p>Please enter your credentials to login.</p>
           </div>
         </div>
-        <form class="login-form">
+        <form className="login-form">
 		<input type="text"  placeholder="Email" 
             onChange={(e) => setLoginInfo({...loginInfo, [e.target.name]:e.target.value})} name="email"/>
           <input type="text"  placeholder="Password" 
             onChange={(e) => setLoginInfo({...loginInfo, [e.target.name]:e.target.value})} name="password"/>
-          <button onClick={(e)=>handleLogin(e)}>SUBMIT</button>
-          <p class="message">Not registered? <a href="/register">Create an account</a></p>
+          <button onClick={(e)=>handleLogin(e)}>LOGIN</button>
+          <p className="message">Not registered? <a href="/register">Create an account</a></p>
         </form>
       </div>
     </div>
-			{/* <input type="text"  placeholder="email" 
-            onChange={(e) => setLoginInfo({...loginInfo, [e.target.name]:e.target.value})} name="email"/>
-			<input type="text"  placeholder="password" 
-            onChange={(e) => setLoginInfo({...loginInfo, [e.target.name]:e.target.value})} name="password"/>
-			<button onClick={(e)=>handleLogin(e)}>SUBMIT</button>
-			<a href="/register">New here? Click here to register!</a> */}
-		</div>
+			
 	)
 	}
 const mapDispatchToProps = (dispatch) => {

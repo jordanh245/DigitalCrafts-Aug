@@ -7,7 +7,7 @@ import Home from "../src/components/Home"
 import Cart from "../src/components/Cart"
 import Contact from "../src/components/Contact"
 import Products from "../src/components/Product"
-// import Error from "./Error";
+import Error from "../src/components/Error";
 // import brand from "../assets/vr-glasses2.png"
 import Register from "../src/components/Register";
 import Login from "../src/components/Login";
@@ -20,16 +20,17 @@ function App() {
       <BrowserRouter>
       <NavbarInfo>
         <Switch>
-          <Route exact path = "/login" component ={Login}/>
-          <Route exact path = "/account" component ={Account}/>
+          
          
           
           <Route exact path = "/" component ={Home}/>
+          <Route  path="*" component ={Error}/>
           <Route exact path = "/cart" component ={Cart}/>
           <Route exact path = "/contact" component ={Contact}/>
           <Route exact path = "/products" component ={Products}/>
           <Route exact path = "/register" component ={Register}/>
-          
+          <Route exact path = "/login" component ={Login}/>
+          <Route exact path = "/account" component ={Account}/>
         </Switch>
         </NavbarInfo>
       </BrowserRouter>

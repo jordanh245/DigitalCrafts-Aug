@@ -3,7 +3,7 @@
 import React, { useState } from 'react'
 import {connect } from "react-redux"
 import {useHistory} from "react-router-dom"
-
+import "../loginstyle.css"
 
  function Login(props) {
 	
@@ -14,13 +14,7 @@ import {useHistory} from "react-router-dom"
 	})
 
 	const history = useHistory()
-//   CHANGE HANDLE TO THIS
-	// const handleChange = (e) => {
-	// 	setLoginInfo ({
-	// 		...loginInfo,
-	// 		[e.target.name]: e.target.value
-	// 	})
-	// }
+
 
 
 	const handleLogin = async (e) => {
@@ -43,7 +37,7 @@ import {useHistory} from "react-router-dom"
 				props.history.push("/account")
 			}
 		})
-		// window.location.reload(false);
+		
 	};
 
 
@@ -51,13 +45,30 @@ import {useHistory} from "react-router-dom"
 
 	return (
 		<div>
-			
-			<input type="text"  placeholder="email" 
+			  <div class="login-page">
+      <div class="form">
+        <div class="login">
+          <div class="login-header">
+            <h3>LOGIN</h3>
+            <p>Please enter your credentials to login.</p>
+          </div>
+        </div>
+        <form class="login-form">
+		<input type="text"  placeholder="Email" 
+            onChange={(e) => setLoginInfo({...loginInfo, [e.target.name]:e.target.value})} name="email"/>
+          <input type="text"  placeholder="Password" 
+            onChange={(e) => setLoginInfo({...loginInfo, [e.target.name]:e.target.value})} name="password"/>
+          <button onClick={(e)=>handleLogin(e)}>SUBMIT</button>
+          <p class="message">Not registered? <a href="/register">Create an account</a></p>
+        </form>
+      </div>
+    </div>
+			{/* <input type="text"  placeholder="email" 
             onChange={(e) => setLoginInfo({...loginInfo, [e.target.name]:e.target.value})} name="email"/>
 			<input type="text"  placeholder="password" 
             onChange={(e) => setLoginInfo({...loginInfo, [e.target.name]:e.target.value})} name="password"/>
 			<button onClick={(e)=>handleLogin(e)}>SUBMIT</button>
-			<a href="/register">New here? Click here to register!</a>
+			<a href="/register">New here? Click here to register!</a> */}
 		</div>
 	)
 	}

@@ -60,13 +60,28 @@ const submitForm = async (e) => {
 	
 	return (
 		<div>
-			<form onSubmit={submitForm}>
-		<input type="text" placeholder="firstname" name="firstname"value={firstname}  onChange={(e)=> submit(e)}/>
-		<input type="text" placeholder="lastname" name="lastname" value={lastname} onChange={(e)=> submit(e)}/>
-		<input type="email" placeholder="email" name="email" value={email}  onChange={(e)=> submit(e)}/>
-		<input type="password" placeholder="password"  name="password" value={password}  onChange={(e)=> submit(e)} />
-		<button >SUBMIT</button>
-			</form>
+		<div>
+			  <div class="login-page">
+      <div class="form">
+        <div class="login">
+          <div class="login-header">
+            <h3>REGISTER</h3>
+            <p>Please enter your credentials to register.</p>
+          </div>
+        </div>
+        <form onSubmit={submitForm}class="login-form">
+		<input type="text" placeholder="First name" name="firstname"value={firstname}  onChange={(e)=> submit(e)}/>
+		<input type="text" placeholder="Last name" name="lastname" value={lastname} onChange={(e)=> submit(e)}/>
+		<input type="email" placeholder="Email" name="email" value={email}  onChange={(e)=> submit(e)}/>
+		<input type="password" placeholder="Password"  name="password" value={password}  onChange={(e)=> submit(e)} />
+        <button >SUBMIT</button>
+          <p class="message">Already registered? <a href="/login">Login!</a></p>
+        </form>
+      </div>
+    </div>
+	</div>
+
+		
 		</div>
 	)
 
